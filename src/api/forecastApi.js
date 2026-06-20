@@ -1,22 +1,28 @@
-import { goldMockData } from "../data/goldMockData";
-import { mockRequest } from "./mockClient";
+const API_BASE_URL = "http://127.0.0.1:8000";
+
+async function requestJson(url) {
+  const response = await fetch(url);
+  const data = await response.json().catch(() => null);
+
+  if (!response.ok || data?.ok === false) {
+    throw new Error(data?.message || "Không lấy được dữ liệu dự đoán");
+  }
+
+  return data;
+}
 
 export const forecastApi = {
-  getForecast() {
-    const forecast =
-      goldMockData.forecast ||
-      goldMockData.forecasts?.find(
-        (item) =>
-          item.companyId === 1 &&
-          item.goldType === "sjc-gold-bar" &&
-          item.area === "ha-noi"
-      ) ||
-      goldMockData.forecasts?.[0];
+  async getByCompany(companyId) {
+    const data = await requestJson(
+      `${API_BASE_URL}/api/forecast/company/${companyId}`
+    );
 
-    return mockRequest(forecast);
-  },
-
-  getForecasts() {
-    return mockRequest(goldMockData.forecasts || []);
+    return {
+      companyId: data.company_id,
+      companyName: data.company_name,
+      companyCode: data.company_code || data.company_name,
+      totalItems: data.total_items || 0,
+      items: Array.isArray(data.items) ? data.items : [],
+    };
   },
 };
