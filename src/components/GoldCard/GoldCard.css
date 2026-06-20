@@ -1,0 +1,91 @@
+.gold-card {
+  width: 100%;
+  padding: 22px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(circle at 16% 12%, rgba(255, 255, 255, 0.88), transparent 22%),
+    linear-gradient(135deg, #d69f33 0%, #edcc7c 33%, #fff4df 100%);
+  box-shadow: var(--shadow-soft);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+.gold-card-head {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 22px;
+  align-items: center;
+}
+.company-logo {
+  width: 86px;
+  height: 86px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background: white;
+  color: var(--color-gold-dark);
+  font-size: 22px;
+  font-weight: 800;
+}
+.gold-card h2 {
+  margin: 0;
+  font-family: Georgia, serif;
+  font-size: 34px;
+  line-height: 1;
+}
+.gold-card p {
+  margin: 8px 0 0;
+}
+.gold-card-price {
+  margin-top: 20px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 1px minmax(0, 1fr);
+  gap: 20px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.92);
+}
+.gold-card-price p {
+  margin: 0 0 8px;
+}
+.gold-card-price strong {
+  display: inline-block;
+  max-width: 100%;
+  font-size: clamp(18px, 1.6vw, 24px);
+  line-height: 1.15;
+  letter-spacing: -0.4px;
+  white-space: nowrap;
+}
+.gold-card-price span {
+  display: block;
+  margin-top: 6px;
+  font-size: 14px;
+}
+.divider {
+  background: #dfcec3;
+}
+@media (max-width: 520px) {
+  .gold-card {
+    padding: 18px;
+  }
+  .gold-card-head {
+    grid-template-columns: 74px 1fr;
+    gap: 16px;
+  }
+  .company-logo {
+    width: 74px;
+    height: 74px;
+    font-size: 20px;
+  }
+  .gold-card h2 {
+    font-size: 28px;
+  }
+  .gold-card-price {
+    gap: 12px;
+    padding: 16px;
+  }
+  .gold-card-price strong {
+    font-size: 19px;
+  }
+}

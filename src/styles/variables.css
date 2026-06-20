@@ -1,0 +1,60 @@
+:root {
+  /* Layout */
+  --max-width: 1360px;
+
+  /* Background */
+  --color-bg: #f7eee8;
+  --color-surface: #fffaf6;
+  --color-card: #ffffff;
+
+  /* Border */
+  --color-border: #ead6c4;
+  --color-border-strong: #dfc3aa;
+
+  /* Text */
+  --color-text: #2f261f;
+  --color-muted: #71665f;
+  --color-muted-2: #64748b;
+
+  /* Brand */
+  --color-gold: #c88920;
+  --color-gold-light: #e7b94e;
+  --color-gold-dark: #a87118;
+
+  /* Price */
+  --color-buy: #006b4f;
+  --color-sell: #dc2626;
+
+  /* Backward compatible names */
+  --color-green: var(--color-buy);
+  --color-red: var(--color-sell);
+
+  /* Change */
+  --change-up-text: var(--color-buy);
+  --change-up-bg: rgba(0, 107, 79, 0.1);
+
+  --change-down-text: var(--color-sell);
+  --change-down-bg: rgba(220, 38, 38, 0.1);
+
+  --change-zero-text: #64748b;
+  --change-zero-bg: rgba(100, 116, 139, 0.12);
+
+  --change-empty-text: #9a6a20;
+  --change-empty-bg: rgba(231, 185, 78, 0.18);
+
+  /* Buttons */
+  --btn-gold-bg: linear-gradient(135deg, #e7b94e, #c88920);
+  --btn-blue-bg: linear-gradient(135deg, #0ea5e9, #0369a1);
+  --btn-green-bg: linear-gradient(135deg, #10b981, #047857);
+  --btn-red-bg: linear-gradient(135deg, #ef4444, #b91c1c);
+
+  /* Shadow */
+  --shadow-soft: 0 14px 36px rgba(90, 58, 36, 0.12);
+  --shadow-card: 0 18px 42px rgba(90, 58, 36, 0.14);
+  --shadow-button: 0 12px 26px rgba(132, 83, 15, 0.16);
+
+  /* Radius */
+  --radius-lg: 22px;
+  --radius-md: 16px;
+  --radius-sm: 12px;
+}

@@ -1,0 +1,133 @@
+.history-chart-skeleton,
+.history-table-skeleton {
+  margin: 18px 20px;
+  padding: 18px;
+  border-radius: 18px;
+  border: 1px solid #d7e3f0;
+  background: #ffffff;
+}
+
+.history-skeleton-title {
+  width: 210px;
+  height: 20px;
+  border-radius: 999px;
+}
+
+.history-skeleton-title.small {
+  width: 150px;
+}
+
+.history-skeleton-subtitle {
+  width: 300px;
+  height: 14px;
+  margin-top: 12px;
+  border-radius: 999px;
+}
+
+.history-skeleton-chart {
+  position: relative;
+  height: 300px;
+  margin-top: 18px;
+  border-radius: 18px;
+  background: #f8fbff;
+  overflow: hidden;
+}
+
+.history-skeleton-chart span {
+  position: absolute;
+  left: 42px;
+  right: 42px;
+  height: 1px;
+  border-top: 1px dashed #d9e7f5;
+}
+
+.history-skeleton-chart span:nth-child(1) {
+  top: 54px;
+}
+
+.history-skeleton-chart span:nth-child(2) {
+  top: 100px;
+}
+
+.history-skeleton-chart span:nth-child(3) {
+  top: 146px;
+}
+
+.history-skeleton-chart span:nth-child(4) {
+  top: 192px;
+}
+
+.history-skeleton-chart span:nth-child(5) {
+  top: 238px;
+}
+
+.history-skeleton-line {
+  position: absolute;
+  left: 70px;
+  right: 70px;
+  height: 8px;
+  border-radius: 999px;
+}
+
+.history-skeleton-line.line-one {
+  top: 126px;
+  transform: rotate(-7deg);
+}
+
+.history-skeleton-line.line-two {
+  top: 166px;
+  transform: rotate(6deg);
+}
+
+.history-skeleton-legend {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 14px;
+}
+
+.history-skeleton-chip {
+  width: 90px;
+  height: 16px;
+  border-radius: 999px;
+}
+
+.history-table-skeleton-head {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.history-skeleton-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1.3fr 1.3fr;
+  gap: 12px;
+  padding: 13px 0;
+  border-bottom: 1px solid #e4edf7;
+}
+
+.history-skeleton-cell {
+  height: 16px;
+  border-radius: 999px;
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    #e8f0f8 0%,
+    #ffffff 50%,
+    #e8f0f8 100%
+  );
+  background-size: 300% 100%;
+  animation: historySkeletonShimmer 1.25s infinite linear;
+}
+
+@keyframes historySkeletonShimmer {
+  0% {
+    background-position: 120% 0;
+  }
+
+  100% {
+    background-position: -120% 0;
+  }
+}

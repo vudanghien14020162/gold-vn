@@ -1,0 +1,188 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--color-text);
+  font-family: "Segoe UI", Arial, sans-serif;
+  background:
+    radial-gradient(
+      circle at 8% 88%,
+      rgba(231, 196, 138, 0.22),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 92% 8%,
+      rgba(255, 255, 255, 0.9),
+      transparent 30%
+    ),
+    linear-gradient(135deg, #fbf5f1, var(--color-bg));
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Common layout */
+
+.panel {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: var(--shadow-soft);
+}
+
+.price-nowrap {
+  white-space: nowrap;
+  word-break: keep-all;
+}
+
+/* Price colors - dùng chung toàn project */
+
+.price-buy,
+.text-buy,
+.buy-price,
+.price-green,
+.text-green {
+  color: var(--color-buy) !important;
+}
+
+.price-sell,
+.text-sell,
+.sell-price,
+.text-red {
+  color: var(--color-sell) !important;
+}
+
+.price-gold,
+.text-gold {
+  color: var(--color-gold-dark) !important;
+}
+
+/* Change badge/text - dùng chung */
+
+.change-up {
+  color: var(--change-up-text) !important;
+  background: var(--change-up-bg);
+}
+
+.change-down {
+  color: var(--change-down-text) !important;
+  background: var(--change-down-bg);
+}
+
+.change-zero {
+  color: var(--change-zero-text) !important;
+  background: var(--change-zero-bg);
+}
+
+.change-empty {
+  color: var(--change-empty-text) !important;
+  background: var(--change-empty-bg);
+}
+
+/* SVG chart colors */
+
+.chart-line-buy,
+.history-line-buy {
+  stroke: var(--color-buy) !important;
+}
+
+.chart-line-sell,
+.history-line-sell {
+  stroke: var(--color-sell) !important;
+}
+
+.chart-dot-buy,
+.history-dot-buy {
+  fill: var(--color-buy) !important;
+}
+
+.chart-dot-sell,
+.history-dot-sell {
+  fill: var(--color-sell) !important;
+}
+
+.legend-buy {
+  color: var(--color-buy) !important;
+}
+
+.legend-sell {
+  color: var(--color-sell) !important;
+}
+
+.legend-buy::before {
+  background: var(--color-buy) !important;
+}
+
+.legend-sell::before {
+  background: var(--color-sell) !important;
+}
+
+/* Buttons */
+
+.btn-gold {
+  color: #ffffff;
+  background: var(--btn-gold-bg);
+  box-shadow: var(--shadow-button);
+}
+
+.btn-blue {
+  color: #ffffff;
+  background: var(--btn-blue-bg);
+  box-shadow: var(--shadow-button);
+}
+
+.btn-green {
+  color: #ffffff;
+  background: var(--btn-green-bg);
+  box-shadow: var(--shadow-button);
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f4e8dc;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cdb7a1;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b99b80;
+}
