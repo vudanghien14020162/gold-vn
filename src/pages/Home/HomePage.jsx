@@ -169,7 +169,7 @@ export default function HomePage({ onNavigate }) {
     async function loadPredictionLater() {
       try {
         const timer = setTimeout(async () => {
-          const data = await homeApi.getPredictionMock();
+          const data = await homeApi.getHomeForecast();
 
           if (mounted) {
             setPrediction(data);
@@ -524,7 +524,7 @@ export default function HomePage({ onNavigate }) {
                 <div>
                   <span>Giá mua dự kiến</span>
                   <strong className="price-buy">
-                    {formatCurrency(prediction.buy)}
+                    {formatCurrency(prediction.forecastBuy)}
                   </strong>
                   <small className={getChangeClass(prediction.buyChange)}>
                     {formatChange(prediction.buyChange)}
@@ -534,7 +534,7 @@ export default function HomePage({ onNavigate }) {
                 <div>
                   <span>Giá bán dự kiến</span>
                   <strong className="price-sell">
-                    {formatCurrency(prediction.sell)}
+                    {formatCurrency(prediction.forecastSell)}
                   </strong>
                   <small className={getChangeClass(prediction.sellChange)}>
                     {formatChange(prediction.sellChange)}

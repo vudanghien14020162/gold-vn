@@ -228,8 +228,10 @@ export default function ForecastPage() {
                   <div className="forecast-card-info">
                     <span className="forecast-badge">{companyCode}</span>
                     <h3>{forecast.gold_name}</h3>
-                    <p>{forecast.company_name}</p>
-                    <p>Khu vực: {forecast.area || "-"}</p>
+                    <div className="forecast-meta-row">
+                      <span>{forecast.company_name}</span>
+                      <span>Khu vực: {forecast.area}</span>
+                    </div>
                   </div>
 
                   <div className="forecast-confidence-box">

@@ -1,1134 +1,43 @@
+.gold-price-page,
 .price-page {
-  padding: 34px 52px;
-}
-
-.price-page-title {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.price-page-title h2 {
-  margin: 0;
-  font-family: Georgia, serif;
-  font-size: 30px;
-  font-weight: 500;
-}
-
-.price-page-title span {
-  height: 1px;
-  flex: 1;
-  background: #d9c6b9;
-}
-
-.price-filter-bar {
-  display: grid;
-  grid-template-columns: 340px 1fr 150px 160px;
-  gap: 16px;
-  align-items: end;
-  margin: 24px 0 16px;
-}
-
-.company-select-wrap,
-.search-input-wrap {
   width: 100%;
-  display: grid;
-  gap: 8px;
-}
-
-.company-select-wrap label,
-.search-input-wrap label {
-  color: #6b5d57;
-  font-size: 13px;
-  font-weight: 600;
-}
-
-.company-select,
-.search-input {
-  width: 100%;
-  height: 58px;
-  border: 1px solid #e8d8c8;
-  border-radius: 16px;
-  background-color: #ffffff;
-  color: #2f261f;
-  font-size: 15px;
-  font-weight: 500;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
-}
-
-.company-select {
-  padding: 0 50px 0 18px;
-  cursor: pointer;
-
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24'%3E%3Cpath fill='%23856b55' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 18px center;
-}
-
-.search-input {
-  padding: 0 20px;
-}
-
-.company-select:hover,
-.search-input:hover {
-  border-color: #d8a24b;
-}
-
-.company-select:focus,
-.search-input:focus {
-  outline: none;
-  border-color: #d8a24b;
-  box-shadow: 0 0 0 4px rgba(216, 162, 75, 0.15);
-}
-
-.sync-btn {
-  height: 58px;
-  min-width: 150px;
-  border: 0;
-  border-radius: 16px;
-  padding: 0 20px;
-  color: #ffffff;
-  font-weight: 700;
-  background: linear-gradient(135deg, #e6b853, #bd7e1c);
-  box-shadow: 0 10px 22px rgba(189, 126, 28, 0.22);
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
-}
-
-.sync-btn:hover:not(:disabled) {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 26px rgba(189, 126, 28, 0.28);
-}
-
-.sync-btn:disabled {
-  opacity: 0.65;
-  cursor: not-allowed;
-}
-
-.sync-btn-secondary {
-  background: linear-gradient(135deg, #efc66a, #cb8b23);
-}
-
-.sync-message {
-  margin: 10px 0 18px;
-  padding: 12px 14px;
-  border-radius: 12px;
-  color: var(--color-green);
-  background: rgba(39, 97, 60, 0.08);
-  border: 1px solid rgba(39, 97, 60, 0.2);
-  font-weight: 600;
-}
-
-.table-summary {
-  margin: 10px 0 14px;
-  color: var(--color-muted);
-  font-size: 14px;
-}
-
-.pagination {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 24px;
-}
-
-.pagination button {
-  min-width: 42px;
-  height: 42px;
-  border: 1px solid #e0cdbd;
-  background: #ffffff;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-.pagination button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.page-active {
-  color: #ffffff !important;
-  border-color: #b97c1f !important;
-  background: linear-gradient(180deg, #ebb95b, #b97c1f) !important;
-}
-
-@media (max-width: 1180px) {
-  .price-filter-bar {
-    grid-template-columns: minmax(280px, 1fr) minmax(320px, 1.4fr);
-  }
-
-  .sync-btn {
-    width: 100%;
-  }
-}
-
-@media (max-width: 760px) {
-  .price-page {
-    padding: 22px;
-  }
-
-  .price-filter-bar {
-    grid-template-columns: 1fr;
-  }
-
-  .price-page-title {
-    align-items: flex-start;
-  }
-
-  .price-page-title h2 {
-    font-size: 26px;
-  }
-
-  .price-page-title span {
-    display: none;
-  }
-}
-
-.price-toolbar {
-  display: grid;
-  grid-template-columns: 340px minmax(320px, 1fr) 150px 160px 170px 170px;
-  gap: 14px;
-  align-items: end;
-  margin: 24px 0 16px;
-}
-
-.price-toolbar label {
-  display: grid;
-  gap: 8px;
-  color: #5f514b;
-  font-size: 13px;
-  font-weight: 700;
-}
-
-.price-toolbar select,
-.price-toolbar input {
-  height: 56px;
-  padding: 0 18px;
-  border: 1px solid #e8d8c8;
-  border-radius: 15px;
-  background: #ffffff;
-  color: #2f261f;
-  font-size: 15px;
-  font-weight: 600;
-}
-
-.price-toolbar button {
-  height: 56px;
-  border: 0;
-  border-radius: 15px;
-  color: #ffffff;
-  font-weight: 800;
-  background: linear-gradient(135deg, #e6b853, #bd7e1c);
-  cursor: pointer;
-}
-
-.telegram-text-btn {
-  background: linear-gradient(135deg, #0ea5e9, #0369a1) !important;
-}
-
-.telegram-image-btn {
-  background: linear-gradient(135deg, #10b981, #047857) !important;
-}
-
-.gold-message {
-  margin: 12px 0;
-  padding: 12px 14px;
-  border-radius: 12px;
-  color: #0b6d4f;
-  background: rgba(11, 143, 122, 0.1);
-  border: 1px solid rgba(11, 143, 122, 0.25);
-  font-weight: 700;
-}
-
-.telegram-image-hidden {
-  position: fixed;
-  left: -99999px;
-  top: 0;
-  width: 900px;
-}
-
-.telegram-price-image {
-  width: 900px;
-  background: #ffffff;
-  color: #0b2545;
-  font-family: Georgia, "Times New Roman", serif;
-  padding: 24px;
-}
-
-.telegram-image-header {
-  display: grid;
-  grid-template-columns: 90px 1fr 220px;
-  gap: 20px;
-  align-items: center;
-  margin-bottom: 18px;
-}
-
-.telegram-logo {
-  width: 70px;
-  height: 70px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  background: #ffc928;
-  color: #ffffff;
-  font-size: 28px;
-  font-weight: 900;
-}
-
-.telegram-image-header h1 {
-  margin: 0;
-  color: #003366;
-  font-size: 34px;
-}
-
-.telegram-image-header p {
-  margin: 6px 0 0;
-  color: #003366;
-  font-size: 18px;
-  font-weight: 700;
-}
-
-.telegram-time {
-  padding: 18px;
-  border-radius: 0 24px 0 24px;
-  background: linear-gradient(135deg, #001f45, #074985);
-  color: #ffffff;
-  text-align: center;
-}
-
-.telegram-time span {
-  font-size: 14px;
-  font-weight: 800;
-}
-
-.telegram-time strong {
-  display: block;
-  margin-top: 4px;
-  color: #ffcc33;
-  font-size: 28px;
-}
-
-.telegram-time p {
-  margin: 4px 0 0;
-  color: #ffffff;
-  font-size: 16px;
-}
-
-.telegram-summary {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  overflow: hidden;
-  border-radius: 8px;
-  background: #003366;
-  color: #ffffff;
-  margin-bottom: 14px;
-}
-
-.telegram-summary div {
-  padding: 12px;
-  text-align: center;
-}
-
-.telegram-summary span {
-  display: block;
-  font-weight: 800;
-}
-
-.telegram-summary strong {
-  display: block;
-  margin-top: 4px;
-  color: #ffd33d;
-  font-size: 18px;
-}
-
-.telegram-table {
-  width: 100%;
-  border-collapse: collapse;
-  border: 1px solid #f0c74b;
-}
-
-.telegram-table th {
-  padding: 12px;
-  background: #ffcc22;
-  color: #001f45;
-  font-size: 15px;
-}
-
-.telegram-table td {
-  padding: 12px;
-  border-bottom: 1px solid #f0df9a;
-  vertical-align: middle;
-}
-
-.telegram-table td:first-child strong {
-  display: block;
-  color: #10243f;
-  font-size: 16px;
-}
-
-.telegram-table td:first-child p {
-  margin: 8px 0 0;
-  color: #314763;
-  font-size: 13px;
-}
-
-.telegram-buy {
-  color: #00823b;
-  font-size: 22px;
-  font-weight: 900;
-  text-align: center;
-}
-
-.telegram-sell {
-  color: #d32626;
-  font-size: 22px;
-  font-weight: 900;
-  text-align: center;
-}
-
-.telegram-change {
-  color: #d32626;
-  font-weight: 800;
-  text-align: center;
-}
-
-.telegram-change p {
-  margin: 4px 0;
-}
-
-.telegram-footer {
-  margin: 18px 0 0;
-  color: #7b7b7b;
-  text-align: center;
-  font-style: italic;
-}
-
-@media (max-width: 1180px) {
-  .price-toolbar {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-.telegram-text-btn {
-  background: linear-gradient(135deg, #0ea5e9, #0369a1) !important;
-}
-
-.telegram-image-btn {
-  background: linear-gradient(135deg, #10b981, #047857) !important;
-}
-
-.gold-message {
-  margin: 12px 0;
-  padding: 12px 14px;
-  border-radius: 12px;
-  color: #0b6d4f;
-  background: rgba(11, 143, 122, 0.1);
-  border: 1px solid rgba(11, 143, 122, 0.25);
-  font-weight: 700;
-}
-
-.telegram-image-hidden {
-  position: fixed;
-  left: -99999px;
-  top: 0;
-  width: 900px;
-}
-
-.telegram-price-image {
-  width: 900px;
-  background: #ffffff;
-  color: #0b2545;
-  font-family: Georgia, "Times New Roman", serif;
-  padding: 24px;
-}
-
-.telegram-image-header {
-  display: grid;
-  grid-template-columns: 90px 1fr 220px;
-  gap: 20px;
-  align-items: center;
-  margin-bottom: 18px;
-}
-
-.telegram-logo {
-  width: 70px;
-  height: 70px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  background: #ffc928;
-  color: #ffffff;
-  font-size: 24px;
-  font-weight: 900;
-}
-
-.telegram-image-header h1 {
-  margin: 0;
-  color: #003366;
-  font-size: 34px;
-}
-
-.telegram-image-header p {
-  margin: 6px 0 0;
-  color: #003366;
-  font-size: 18px;
-  font-weight: 700;
-}
-
-.telegram-time {
-  padding: 18px;
-  border-radius: 0 24px 0 24px;
-  background: linear-gradient(135deg, #001f45, #074985);
-  color: #ffffff;
-  text-align: center;
-}
-
-.telegram-time span {
-  font-size: 14px;
-  font-weight: 800;
-}
-
-.telegram-time strong {
-  display: block;
-  margin-top: 4px;
-  color: #ffcc33;
-  font-size: 28px;
-}
-
-.telegram-time p {
-  margin: 4px 0 0;
-  color: #ffffff;
-  font-size: 16px;
-}
-
-.telegram-summary {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  overflow: hidden;
-  border-radius: 8px;
-  background: #003366;
-  color: #ffffff;
-  margin-bottom: 14px;
-}
-
-.telegram-summary div {
-  padding: 12px;
-  text-align: center;
-}
-
-.telegram-summary span {
-  display: block;
-  font-weight: 800;
-}
-
-.telegram-summary strong {
-  display: block;
-  margin-top: 4px;
-  color: #ffd33d;
-  font-size: 18px;
-}
-
-.telegram-table {
-  width: 100%;
-  border-collapse: collapse;
-  border: 1px solid #f0c74b;
-}
-
-.telegram-table th {
-  padding: 12px;
-  background: #ffcc22;
-  color: #001f45;
-  font-size: 15px;
-}
-
-.telegram-table td {
-  padding: 12px;
-  border-bottom: 1px solid #f0df9a;
-  vertical-align: middle;
-}
-
-.telegram-table td:first-child strong {
-  display: block;
-  color: #10243f;
-  font-size: 16px;
-}
-
-.telegram-table td:first-child p {
-  margin: 8px 0 0;
-  color: #314763;
-  font-size: 13px;
-}
-
-.telegram-buy {
-  color: #00823b;
-  font-size: 22px;
-  font-weight: 900;
-  text-align: center;
-}
-
-.telegram-sell {
-  color: #d32626;
-  font-size: 22px;
-  font-weight: 900;
-  text-align: center;
-}
-
-.telegram-change {
-  color: #d32626;
-  font-weight: 800;
-  text-align: center;
-}
-
-.telegram-change p {
-  margin: 4px 0;
-}
-
-.telegram-footer {
-  margin: 18px 0 0;
-  color: #7b7b7b;
-  text-align: center;
-  font-style: italic;
-}
-
-@media (max-width: 1180px) {
-  .price-toolbar {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-.gold-price-page {
-  padding: 28px 38px;
-}
-
-.page-title {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 24px;
-}
-
-.page-title h2 {
-  margin: 0;
-  font-family: Georgia, serif;
-  font-size: 32px;
-  font-weight: 500;
-}
-
-.page-title span {
-  flex: 1;
-  height: 1px;
-  background: #d9c6b9;
-}
-
-.price-toolbar {
-  display: grid;
-  grid-template-columns: 320px minmax(360px, 1fr);
-  gap: 14px;
-  align-items: end;
-  margin-bottom: 16px;
-}
-
-.price-toolbar label {
-  display: grid;
-  gap: 8px;
-  color: #5f514b;
-  font-size: 13px;
-  font-weight: 700;
-}
-
-.price-toolbar select,
-.price-toolbar input {
-  width: 100%;
-  height: 56px;
-  padding: 0 18px;
-  border: 1px solid #e8d8c8;
-  border-radius: 15px;
-  background: #ffffff;
-  color: #2f261f;
-  font-size: 15px;
-  font-weight: 600;
-}
-
-.price-toolbar-actions {
-  grid-column: 1 / -1;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-}
-
-.price-toolbar-actions button {
-  height: 52px;
-  min-width: 150px;
-  border: 0;
-  border-radius: 15px;
-  padding: 0 18px;
-  color: #ffffff;
-  font-weight: 800;
-  background: linear-gradient(135deg, #e6b853, #bd7e1c);
-  cursor: pointer;
-  white-space: nowrap;
-}
-
-.telegram-text-btn {
-  background: linear-gradient(135deg, #0ea5e9, #0369a1) !important;
-}
-
-.telegram-image-btn {
-  background: linear-gradient(135deg, #10b981, #047857) !important;
-}
-
-.gold-message {
-  margin: 12px 0;
-  padding: 12px 14px;
-  border-radius: 12px;
-  color: #0b6d4f;
-  background: rgba(11, 143, 122, 0.1);
-  border: 1px solid rgba(11, 143, 122, 0.25);
-  font-weight: 700;
-}
-
-@media (max-width: 900px) {
-  .price-toolbar {
-    grid-template-columns: 1fr;
-  }
-
-  .price-toolbar-actions button {
-    flex: 1;
-  }
-}
-
-.gold-price-page {
   padding: 32px 38px 44px;
+  overflow-x: hidden;
 }
 
-.gold-price-page * {
+.gold-price-page *,
+.price-page * {
   box-sizing: border-box;
 }
 
-.page-title {
+/* Title */
+
+.page-title,
+.price-page-title {
   display: flex;
   align-items: center;
   gap: 16px;
   margin-bottom: 26px;
 }
 
-.page-title h2 {
+.page-title h2,
+.price-page-title h2 {
   margin: 0;
   font-family: Georgia, serif;
   font-size: 32px;
   font-weight: 500;
   color: #2f261f;
+  line-height: 1.25;
 }
 
-.page-title span {
+.page-title span,
+.price-page-title span {
   flex: 1;
   height: 1px;
   background: #d9c6b9;
 }
 
-.price-toolbar {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 18px;
-  align-items: end;
-  margin-bottom: 16px;
-}
-
-.price-filter-group {
-  display: grid;
-  grid-template-columns: 340px minmax(360px, 1fr);
-  gap: 14px;
-  min-width: 0;
-}
-
-.price-filter-group label {
-  display: grid;
-  gap: 8px;
-  min-width: 0;
-  color: #5f514b;
-  font-size: 13px;
-  font-weight: 700;
-}
-
-.price-filter-group select,
-.price-filter-group input {
-  width: 100%;
-  height: 56px;
-  padding: 0 18px;
-  border: 1px solid #e8d8c8;
-  border-radius: 15px;
-  background: #ffffff;
-  color: #2f261f;
-  font-size: 15px;
-  font-weight: 600;
-}
-
-.price-filter-group select {
-  padding-right: 46px;
-  cursor: pointer;
-  appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24'%3E%3Cpath fill='%23856b55' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 16px center;
-}
-
-.price-filter-group select:focus,
-.price-filter-group input:focus {
-  outline: none;
-  border-color: #d8a24b;
-  box-shadow: 0 0 0 4px rgba(216, 162, 75, 0.14);
-}
-
-.price-toolbar-actions {
-  display: flex;
-  justify-content: flex-end;
-  gap: 12px;
-  white-space: nowrap;
-}
-
-.price-toolbar-actions button {
-  height: 56px;
-  min-width: 142px;
-  border: 0;
-  border-radius: 15px;
-  padding: 0 17px;
-  color: #ffffff;
-  font-weight: 800;
-  background: linear-gradient(135deg, #e6b853, #bd7e1c);
-  cursor: pointer;
-  box-shadow: 0 10px 22px rgba(189, 126, 28, 0.18);
-}
-
-.price-toolbar-actions button:hover {
-  transform: translateY(-1px);
-}
-
-.telegram-text-btn {
-  background: linear-gradient(135deg, #0ea5e9, #0369a1) !important;
-}
-
-.telegram-image-btn {
-  background: linear-gradient(135deg, #10b981, #047857) !important;
-}
-
-.gold-message {
-  margin: 12px 0;
-  padding: 12px 14px;
-  border-radius: 12px;
-  color: #0b6d4f;
-  background: rgba(11, 143, 122, 0.1);
-  border: 1px solid rgba(11, 143, 122, 0.25);
-  font-weight: 700;
-}
-
-.price-count {
-  margin: 0 0 14px;
-  color: #71665f;
-  font-size: 14px;
-}
-
-.price-pagination {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 24px;
-}
-
-.price-pagination button {
-  min-width: 40px;
-  height: 40px;
-  border: 1px solid #e0cdbd;
-  border-radius: 10px;
-  background: #ffffff;
-  color: #2f261f;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.price-pagination button.active {
-  color: #ffffff;
-  border-color: #b97c1f;
-  background: linear-gradient(180deg, #ebb95b, #b97c1f);
-}
-
-.price-pagination button:disabled {
-  opacity: 0.45;
-  cursor: not-allowed;
-}
-
-.telegram-image-hidden {
-  position: fixed;
-  left: -99999px;
-  top: 0;
-  width: 900px;
-}
-
-.telegram-price-image {
-  width: 900px;
-  background: #ffffff;
-  color: #0b2545;
-  font-family: Georgia, "Times New Roman", serif;
-  padding: 24px;
-}
-
-.telegram-image-header {
-  display: grid;
-  grid-template-columns: 90px 1fr 220px;
-  gap: 20px;
-  align-items: center;
-  margin-bottom: 18px;
-}
-
-.telegram-logo {
-  width: 70px;
-  height: 70px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  background: #ffc928;
-  color: #ffffff;
-  font-size: 24px;
-  font-weight: 900;
-}
-
-.telegram-image-header h1 {
-  margin: 0;
-  color: #003366;
-  font-size: 34px;
-}
-
-.telegram-image-header p {
-  margin: 6px 0 0;
-  color: #003366;
-  font-size: 18px;
-  font-weight: 700;
-}
-
-.telegram-time {
-  padding: 18px;
-  border-radius: 0 24px 0 24px;
-  background: linear-gradient(135deg, #001f45, #074985);
-  color: #ffffff;
-  text-align: center;
-}
-
-.telegram-time span {
-  font-size: 14px;
-  font-weight: 800;
-}
-
-.telegram-time strong {
-  display: block;
-  margin-top: 4px;
-  color: #ffcc33;
-  font-size: 28px;
-}
-
-.telegram-time p {
-  margin: 4px 0 0;
-  color: #ffffff;
-  font-size: 16px;
-}
-
-.telegram-summary {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  overflow: hidden;
-  border-radius: 8px;
-  background: #003366;
-  color: #ffffff;
-  margin-bottom: 14px;
-}
-
-.telegram-summary div {
-  padding: 12px;
-  text-align: center;
-}
-
-.telegram-summary span {
-  display: block;
-  font-weight: 800;
-}
-
-.telegram-summary strong {
-  display: block;
-  margin-top: 4px;
-  color: #ffd33d;
-  font-size: 18px;
-}
-
-.telegram-table {
-  width: 100%;
-  border-collapse: collapse;
-  border: 1px solid #f0c74b;
-}
-
-.telegram-table th {
-  padding: 12px;
-  background: #ffcc22;
-  color: #001f45;
-  font-size: 15px;
-}
-
-.telegram-table td {
-  padding: 12px;
-  border-bottom: 1px solid #f0df9a;
-  vertical-align: middle;
-}
-
-.telegram-table td:first-child strong {
-  display: block;
-  color: #10243f;
-  font-size: 16px;
-}
-
-.telegram-table td:first-child p {
-  margin: 8px 0 0;
-  color: #314763;
-  font-size: 13px;
-}
-
-.telegram-buy {
-  color: #00823b;
-  font-size: 22px;
-  font-weight: 900;
-  text-align: center;
-}
-
-.telegram-sell {
-  color: #d32626;
-  font-size: 22px;
-  font-weight: 900;
-  text-align: center;
-}
-
-.telegram-change {
-  color: #d32626;
-  font-weight: 800;
-  text-align: center;
-}
-
-.telegram-change p {
-  margin: 4px 0;
-}
-
-.telegram-footer {
-  margin: 18px 0 0;
-  color: #7b7b7b;
-  text-align: center;
-  font-style: italic;
-}
-
-@media (max-width: 1280px) {
-  .price-toolbar {
-    grid-template-columns: 1fr;
-  }
-
-  .price-toolbar-actions {
-    justify-content: flex-end;
-    flex-wrap: wrap;
-  }
-}
-
-@media (max-width: 820px) {
-  .gold-price-page {
-    padding: 24px 20px;
-  }
-
-  .page-title h2 {
-    font-size: 28px;
-  }
-
-  .page-title span {
-    display: none;
-  }
-
-  .price-filter-group {
-    grid-template-columns: 1fr;
-  }
-
-  .price-toolbar-actions {
-    justify-content: stretch;
-  }
-
-  .price-toolbar-actions button {
-    flex: 1;
-    min-width: 150px;
-  }
-}
-
-.price-toolbar-actions button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 9px;
-}
-
-.price-toolbar-actions button svg {
-  flex: 0 0 auto;
-}
-
-.price-toolbar-actions button:disabled {
-  opacity: 0.65;
-  cursor: not-allowed;
-  transform: none;
-}
-
-.sync-time {
-  width: fit-content;
-  margin: 12px 0 16px;
-  padding: 10px 14px;
-  border-radius: 999px;
-
-  color: var(--text-secondary);
-  background: var(--bg-chip);
-  border: 1px solid var(--border-soft);
-
-  font-size: 13px;
-  font-weight: 700;
-}
-
-.sync-time strong {
-  color: var(--gold-primary-dark);
-}
-
-.price-action-area {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.company-sync-time {
-  min-width: 220px;
-  padding: 10px 16px;
-  border-radius: 16px;
-  background: #fff8ed;
-  border: 1px solid var(--border-soft);
-  box-shadow: 0 10px 22px rgba(132, 83, 15, 0.08);
-}
-
-.company-sync-time span {
-  display: block;
-  margin-bottom: 4px;
-  color: var(--text-secondary);
-  font-size: 12px;
-  font-weight: 700;
-}
-
-.company-sync-time strong {
-  display: block;
-  color: var(--gold-primary-dark);
-  font-size: 14px;
-  font-weight: 900;
-}
+/* Toolbar */
 
 .price-toolbar {
   display: grid;
@@ -1144,130 +53,65 @@
   align-items: end;
 }
 
-.price-action-area {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 14px;
-  flex-wrap: wrap;
-}
-
-.company-sync-time {
-  height: 56px;
-  min-width: 230px;
-  padding: 9px 16px;
-  border-radius: 15px;
-  background: #fff8ed;
-  border: 1px solid var(--border-soft);
-  box-shadow: 0 10px 22px rgba(132, 83, 15, 0.08);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.company-sync-time span {
-  color: var(--text-secondary);
-  font-size: 12px;
-  font-weight: 800;
-  line-height: 1.2;
-}
-
-.company-sync-time strong {
-  margin-top: 4px;
-  color: var(--text-primary);
-  font-size: 14px;
-  font-weight: 900;
-  white-space: nowrap;
-}
-
-.price-toolbar-actions {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.price-toolbar-actions button {
-  height: 56px;
-  min-width: 150px;
-}
-
-.price-action-area {
-  justify-content: flex-start;
-}
-
-.price-action-area {
-  grid-column: 1 / -1;
-
-  width: 100%;
+.price-filter-group label,
+.company-select-wrap,
+.search-input-wrap {
   display: grid;
-  grid-template-columns: 260px minmax(0, 1fr);
-  gap: 16px;
-  align-items: center;
-
-  margin-top: 2px;
-}
-
-.company-sync-time {
-  height: 56px;
+  gap: 8px;
   min-width: 0;
-  padding: 9px 16px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  border-radius: 15px;
-  background: #fff8ed;
-  border: 1px solid var(--border-soft);
-  box-shadow: 0 10px 22px rgba(132, 83, 15, 0.08);
+  color: #5f514b;
+  font-size: 13px;
+  font-weight: 700;
 }
 
-.company-sync-time span {
-  color: var(--text-secondary);
-  font-size: 12px;
-  font-weight: 800;
-  line-height: 1.2;
-}
-
-.company-sync-time strong {
-  margin-top: 4px;
-  color: var(--text-primary);
-  font-size: 14px;
-  font-weight: 900;
-  white-space: nowrap;
-}
-
-.price-toolbar-actions {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.price-toolbar-actions button {
+.price-filter-group select,
+.price-filter-group input,
+.company-select,
+.search-input {
+  width: 100%;
   height: 56px;
-  min-width: 150px;
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 9px;
+  padding: 0 18px;
+  border: 1px solid #e8d8c8;
+  border-radius: 15px;
+  background: #ffffff;
+  color: #2f261f;
+  font-size: 15px;
+  font-weight: 600;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-@media (max-width: 1180px) {
-  .price-action-area {
-    grid-template-columns: 1fr;
-  }
-
-  .price-toolbar-actions {
-    justify-content: flex-start;
-  }
+.price-filter-group select,
+.company-select {
+  padding-right: 46px;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24'%3E%3Cpath fill='%23856b55' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
 }
+
+.price-filter-group select:hover,
+.price-filter-group input:hover,
+.company-select:hover,
+.search-input:hover {
+  border-color: #d8a24b;
+}
+
+.price-filter-group select:focus,
+.price-filter-group input:focus,
+.company-select:focus,
+.search-input:focus {
+  border-color: #d8a24b;
+  box-shadow: 0 0 0 4px rgba(216, 162, 75, 0.14);
+}
+
+/* Action area */
 
 .price-action-area {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1279,95 +123,401 @@
   flex-shrink: 0;
   min-width: 260px;
   height: 56px;
-
+  padding: 0 16px;
+  border-radius: 14px;
+  border: 1px solid var(--color-border, #ead6c4);
+  background: rgba(255, 255, 255, 0.86);
   display: flex;
   flex-direction: column;
   justify-content: center;
+  box-shadow: 0 10px 22px rgba(132, 83, 15, 0.08);
+}
 
-  padding: 0 16px;
+.company-sync-time span {
+  color: var(--color-muted, #71665f);
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.2;
+}
 
-  border-radius: 14px;
-  border: 1px solid var(--color-border);
-
-  background: rgba(255,255,255,0.85);
+.company-sync-time strong {
+  margin-top: 4px;
+  color: var(--color-text, #2f261f);
+  font-size: 14px;
+  font-weight: 900;
+  white-space: nowrap;
 }
 
 .price-toolbar-actions {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 12px;
+  flex-wrap: wrap;
 }
 
-@media (max-width: 768px) {
-  .gold-price-page {
-    padding: 20px;
-    overflow-x: hidden;
-  }
+.price-toolbar-actions button,
+.sync-btn {
+  height: 52px;
+  min-width: 150px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 15px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 900;
+  background: linear-gradient(135deg, #e6b853, #bd7e1c);
+  box-shadow: 0 10px 22px rgba(189, 126, 28, 0.18);
+  cursor: pointer;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
 
-  .price-page-title {
-    display: block;
-    margin-bottom: 22px;
-  }
+.price-toolbar-actions button:hover:not(:disabled),
+.sync-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 26px rgba(189, 126, 28, 0.24);
+}
 
-  .price-page-title h2 {
-    font-size: 28px;
-    line-height: 1.2;
-  }
+.price-toolbar-actions button:disabled,
+.sync-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
 
-  .price-toolbar {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
+.price-toolbar-actions button svg {
+  flex: 0 0 auto;
+}
 
-  .price-filter-group {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 14px;
-    width: 100%;
-  }
+.sync-btn-secondary {
+  background: linear-gradient(135deg, #efc66a, #cb8b23);
+}
 
-  .price-filter-group label,
-  .search-filter {
-    width: 100%;
-  }
+.telegram-text-btn {
+  background: linear-gradient(135deg, #0ea5e9, #0369a1) !important;
+}
 
-  .price-filter-group select,
-  .price-filter-group input {
-    width: 100%;
-    height: 56px;
-    box-sizing: border-box;
+.telegram-image-btn {
+  background: linear-gradient(135deg, #10b981, #047857) !important;
+}
+
+/* Message */
+
+.gold-message,
+.sync-message {
+  margin: 12px 0;
+  padding: 12px 14px;
+  border-radius: 12px;
+  color: #0b6d4f;
+  background: rgba(11, 143, 122, 0.1);
+  border: 1px solid rgba(11, 143, 122, 0.25);
+  font-weight: 700;
+}
+
+/* Count */
+
+.price-count,
+.table-summary {
+  margin: 0 0 14px;
+  color: var(--color-muted, #71665f);
+  font-size: 14px;
+}
+
+.price-count strong,
+.table-summary strong {
+  color: #111827;
+  font-weight: 900;
+}
+
+/* Pagination */
+
+.price-pagination,
+.pagination {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.price-pagination button,
+.pagination button {
+  min-width: 40px;
+  height: 40px;
+  border: 1px solid #e0cdbd;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #2f261f;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.price-pagination button.active,
+.pagination button.page-active,
+.page-active {
+  color: #ffffff !important;
+  border-color: #b97c1f !important;
+  background: linear-gradient(180deg, #ebb95b, #b97c1f) !important;
+}
+
+.price-pagination button:disabled,
+.pagination button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* Telegram image hidden */
+
+.telegram-image-hidden {
+  position: fixed;
+  left: -99999px;
+  top: 0;
+  width: 900px;
+}
+
+.telegram-price-image {
+  width: 900px;
+  padding: 24px;
+  background: #ffffff;
+  color: #0b2545;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.telegram-image-header {
+  display: grid;
+  grid-template-columns: 90px 1fr 220px;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.telegram-logo {
+  width: 70px;
+  height: 70px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #ffc928;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.telegram-image-header h1 {
+  margin: 0;
+  color: #003366;
+  font-size: 34px;
+}
+
+.telegram-image-header p {
+  margin: 6px 0 0;
+  color: #003366;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.telegram-time {
+  padding: 18px;
+  border-radius: 0 24px 0 24px;
+  background: linear-gradient(135deg, #001f45, #074985);
+  color: #ffffff;
+  text-align: center;
+}
+
+.telegram-time span {
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.telegram-time strong {
+  display: block;
+  margin-top: 4px;
+  color: #ffcc33;
+  font-size: 28px;
+}
+
+.telegram-time p {
+  margin: 4px 0 0;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.telegram-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  overflow: hidden;
+  border-radius: 8px;
+  background: #003366;
+  color: #ffffff;
+  margin-bottom: 14px;
+}
+
+.telegram-summary div {
+  padding: 12px;
+  text-align: center;
+}
+
+.telegram-summary span {
+  display: block;
+  font-weight: 800;
+}
+
+.telegram-summary strong {
+  display: block;
+  margin-top: 4px;
+  color: #ffd33d;
+  font-size: 18px;
+}
+
+.telegram-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #f0c74b;
+}
+
+.telegram-table th {
+  padding: 12px;
+  background: #ffcc22;
+  color: #001f45;
+  font-size: 15px;
+}
+
+.telegram-table td {
+  padding: 12px;
+  border-bottom: 1px solid #f0df9a;
+  vertical-align: middle;
+}
+
+.telegram-table td:first-child strong {
+  display: block;
+  color: #10243f;
+  font-size: 16px;
+}
+
+.telegram-table td:first-child p {
+  margin: 8px 0 0;
+  color: #314763;
+  font-size: 13px;
+}
+
+.telegram-buy {
+  color: #00823b;
+  font-size: 22px;
+  font-weight: 900;
+  text-align: center;
+}
+
+.telegram-sell {
+  color: #d32626;
+  font-size: 22px;
+  font-weight: 900;
+  text-align: center;
+}
+
+.telegram-change {
+  color: #d32626;
+  font-weight: 800;
+  text-align: center;
+}
+
+.telegram-change p {
+  margin: 4px 0;
+}
+
+.telegram-footer {
+  margin: 18px 0 0;
+  color: #7b7b7b;
+  text-align: center;
+  font-style: italic;
+}
+
+/* Responsive */
+
+@media (max-width: 1280px) {
+  .gold-price-page,
+  .price-page {
+    padding: 30px 32px 40px;
   }
 
   .price-action-area {
-    display: flex;
+    align-items: stretch;
     flex-direction: column;
-    gap: 16px;
-    width: 100%;
   }
 
   .company-sync-time {
     width: 100%;
-    box-sizing: border-box;
+  }
+
+  .price-toolbar-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 900px) {
+  .price-filter-group {
+    grid-template-columns: 1fr;
   }
 
   .price-toolbar-actions {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .price-toolbar-actions button {
     width: 100%;
-    min-height: 56px;
-    padding: 0 12px;
-    font-size: 15px;
-    justify-content: center;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .gold-price-page,
+  .price-page {
+    padding: 22px 18px 34px;
   }
 
-  .price-count-row {
-    margin: 16px 0;
+  .page-title,
+  .price-page-title {
+    align-items: flex-start;
+    margin-bottom: 22px;
+  }
+
+  .page-title h2,
+  .price-page-title h2 {
+    font-size: 28px;
+  }
+
+  .page-title span,
+  .price-page-title span {
+    display: none;
+  }
+
+  .price-filter-group select,
+  .price-filter-group input,
+  .company-select,
+  .search-input {
+    height: 54px;
+  }
+
+  .company-sync-time {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .price-toolbar-actions {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .price-toolbar-actions button {
+    min-height: 52px;
+    padding: 0 12px;
+    font-size: 14px;
   }
 
   .price-list,
@@ -1383,7 +533,7 @@
     display: grid !important;
     grid-template-columns: 1fr !important;
     gap: 18px;
-    padding: 22px !important;
+    padding: 20px !important;
   }
 
   .price-row > *,
@@ -1435,12 +585,14 @@
 }
 
 @media (max-width: 480px) {
-  .gold-price-page {
-    padding: 16px;
+  .gold-price-page,
+  .price-page {
+    padding: 18px 14px 30px;
   }
 
+  .page-title h2,
   .price-page-title h2 {
-    font-size: 26px;
+    font-size: 25px;
   }
 
   .price-toolbar-actions {
@@ -1448,7 +600,7 @@
   }
 
   .price-toolbar-actions button {
-    min-height: 54px;
+    min-height: 52px;
   }
 
   .price-values,
@@ -1459,6 +611,6 @@
 
   .price-buy,
   .price-sell {
-    font-size: 23px !important;
+    font-size: 22px !important;
   }
 }

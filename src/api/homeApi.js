@@ -1,10 +1,20 @@
 const API_BASE_URL = "https://be-gold-mongo-mysql.vercel.app";
-
+const FORECAST_API_URL = "http://127.0.0.1:8000";
 async function request(path) {
   const response = await fetch(`${API_BASE_URL}${path}`);
 
   if (!response.ok) {
     throw new Error(`API error ${response.status}`);
+  }
+
+  return response.json();
+}
+
+async function forecastRequest(path) {
+  const response = await fetch(`${FORECAST_API_URL}${path}`);
+
+  if (!response.ok) {
+    throw new Error(`Forecast API error ${response.status}`);
   }
 
   return response.json();
@@ -64,17 +74,51 @@ export const homeApi = {
       : [];
   },
 
-  async getPredictionMock() {
-    return {
-      companyName: "SJC",
-      area: "Biên Hòa",
-      goldName: "Vàng SJC 1L, 10L, 1KG",
-      buy: 14550000,
-      sell: 14800000,
-      buyChange: 150000,
-      sellChange: 100000,
-      confidence: 94,
-      note: "Dự đoán mock dựa trên lịch sử biến động giá gần nhất.",
-    };
-  },
+
+  async getHomeForecast() {
+  const goldName = encodeURIComponent("Vàng SJC 1L, 10L, 1KG");
+  const area = encodeURIComponent("Biên Hòa");
+
+  const data = await forecastRequest(
+    `/api/forecast/company/1/gold?name=${goldName}&area=${area}`
+  );
+
+  return {
+    companyName: data.company_name || "SJC",
+    companyCode: data.company_code || "SJC",
+
+    area: data.area,
+    goldName: data.gold_name,
+
+    currentBuy: Number(data.current_buy_price || 0),
+    currentSell: Number(data.current_sell_price || 0),
+
+    forecastBuy: Number(data.forecast_buy_price || 0),
+    forecastSell: Number(data.forecast_sell_price || 0),
+
+    buyChange: Number(data.buy_change || 0),
+    sellChange: Number(data.sell_change || 0),
+
+    buyChangePercent: Number(data.buy_change_percent || 0),
+    sellChangePercent: Number(data.sell_change_percent || 0),
+
+    trend: data.trend || "sideway",
+
+    confidence: Math.max(
+      Number(data?.probability?.up || 0),
+      Number(data?.probability?.down || 0),
+      Number(data?.probability?.sideway || 0)
+    ),
+
+    probability: data.probability || {},
+
+    range: {
+      p10: Number(data?.range?.p10 || 0),
+      p50: Number(data?.range?.p50 || 0),
+      p90: Number(data?.range?.p90 || 0),
+    },
+
+    model: data.model || {},
+  };
+}
 };
