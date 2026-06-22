@@ -727,3 +727,67 @@
     border-top: 1px solid #ead6c4;
   }
 }
+
+@media (max-width: 620px) {
+  .home-page {
+    width: 100%;
+    max-width: 100%;
+    padding: 18px 12px 92px;
+    overflow-x: hidden;
+  }
+
+  .home-dashboard,
+  .home-company-column,
+  .home-market-column,
+  .home-right-column {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .home-company-card,
+  .market-card,
+  .market-item,
+  .home-chart-card,
+  .prediction-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .section-heading {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .section-heading h2 {
+    max-width: 100%;
+    font-size: 34px;
+    line-height: 1.1;
+    white-space: normal;
+    word-break: break-word;
+  }
+
+  .market-price-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .market-price-grid b {
+    font-size: 24px;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 380px) {
+  .home-page {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .section-heading h2 {
+    font-size: 31px;
+  }
+
+  .market-price-grid b {
+    font-size: 22px;
+  }
+}

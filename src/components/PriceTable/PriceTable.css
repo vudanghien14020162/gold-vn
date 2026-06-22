@@ -157,6 +157,8 @@
   color: #9a6a20 !important;
 }
 
+/* Tablet */
+
 @media (max-width: 760px) {
   .price-table-list {
     gap: 12px;
@@ -188,17 +190,49 @@
   }
 }
 
-@media (max-width: 420px) {
+/* Mobile: chuyển mua/bán thành 1 cột để không đè giá */
+
+@media (max-width: 560px) {
+  .price-card {
+    padding: 14px;
+  }
+
+  .price-card-header {
+    display: block;
+  }
+
+  .price-card-header h3 {
+    font-size: 19px;
+    line-height: 1.25;
+  }
+
+  .price-card-header p {
+    margin-top: 4px;
+    font-size: 13px;
+  }
+
   .price-card-prices {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 
   .price-box {
-    padding: 10px;
+    padding: 12px;
+  }
+
+  .price-box:first-child {
+    border-right: 0;
+    border-bottom: 1px solid #ead6c4;
+  }
+
+  .price-box:last-child {
+    align-items: flex-start;
+    text-align: left;
   }
 
   .price-value {
-    font-size: 18px;
+    font-size: 22px;
+    line-height: 1.2;
+    white-space: nowrap;
   }
 
   .price-label {
@@ -208,5 +242,37 @@
   .price-box small {
     font-size: 11px;
     padding: 3px 7px;
+  }
+}
+
+@media (max-width: 420px) {
+  .price-card {
+    padding: 13px;
+  }
+
+  .price-card-header h3 {
+    font-size: 18px;
+  }
+
+  .price-box {
+    padding: 11px;
+  }
+
+  .price-value {
+    font-size: 21px;
+  }
+}
+
+@media (max-width: 360px) {
+  .price-card {
+    padding: 12px;
+  }
+
+  .price-card-header h3 {
+    font-size: 17px;
+  }
+
+  .price-value {
+    font-size: 20px;
   }
 }
