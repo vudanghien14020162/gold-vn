@@ -1,6 +1,7 @@
 .contact-page {
   min-height: 640px;
-  padding: 42px 52px 58px;
+  /* padding: 42px 52px 58px; */
+  padding: 32px 38px 44px;
 }
 
 .contact-hero {
@@ -16,7 +17,7 @@
 
 .contact-hero h2 {
   margin: 10px 0;
-  font-family: Georgia, serif;
+  /* font-family: Georgia, serif; */
   font-size: 38px;
   font-weight: 500;
   color: #2f261f;

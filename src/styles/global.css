@@ -186,3 +186,48 @@ img {
 ::-webkit-scrollbar-thumb:hover {
   background: #b99b80;
 }
+
+:root {
+  --font-main: Arial, Helvetica, sans-serif;
+}
+
+html,
+body,
+#root {
+  font-family: var(--font-main);
+}
+
+* {
+  font-family: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+.layout-content {
+  width: 100%;
+  max-width: 1360px;
+  min-height: calc(100vh - 150px);
+  margin: 0 auto;
+  padding: 0;
+}
+
+.page-placeholder,
+.home-page,
+.gold-price-page,
+.price-page,
+.forecast-page,
+.world-page,
+.tts-page {
+  width: 100%;
+  min-height: calc(100vh - 170px);
+  padding: 32px 38px 44px;
+}
+
+html {
+  overflow-y: scroll;
+}

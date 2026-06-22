@@ -1,6 +1,7 @@
 .gold-price-page,
 .price-page {
   width: 100%;
+  /* padding: 32px 38px 44px; */
   padding: 32px 38px 44px;
   overflow-x: hidden;
 }
@@ -23,7 +24,7 @@
 .page-title h2,
 .price-page-title h2 {
   margin: 0;
-  font-family: Georgia, serif;
+  /* font-family: Georgia, serif; */
   font-size: 32px;
   font-weight: 500;
   color: #2f261f;
@@ -285,7 +286,7 @@
   padding: 24px;
   background: #ffffff;
   color: #0b2545;
-  font-family: Georgia, "Times New Roman", serif;
+  /* font-family: Georgia, "Times New Roman", serif; */
 }
 
 .telegram-image-header {

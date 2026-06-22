@@ -1,22 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Gem, Menu, X } from "lucide-react";
-import { MENU_ITEMS } from "../../utils/constants";
+import { FORECAST_MENU_ITEM, MENU_ITEMS } from "../../utils/constants";
 import "./Header.css";
 
 export default function Header({ activePage, onNavigate }) {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
   const handleNavigate = (path) => {
-    setMenuOpen(false);
-
-    if (typeof onNavigate === "function") {
-      onNavigate(path);
-    }
+    onNavigate(path);
+    setOpen(false);
   };
-
-  useEffect(() => {
-    setMenuOpen(false);
-  }, [activePage]);
 
   return (
     <header className="header">
@@ -24,7 +17,6 @@ export default function Header({ activePage, onNavigate }) {
         type="button"
         className="brand-button"
         onClick={() => handleNavigate("home")}
-        aria-label="Về trang chủ"
       >
         <span className="brand-icon">
           <Gem size={24} />
@@ -36,14 +28,13 @@ export default function Header({ activePage, onNavigate }) {
       <button
         type="button"
         className="mobile-menu-btn"
-        onClick={() => setMenuOpen((prev) => !prev)}
-        aria-label={menuOpen ? "Đóng menu" : "Mở menu"}
-        aria-expanded={menuOpen}
+        onClick={() => setOpen((prev) => !prev)}
+        aria-label={open ? "Đóng menu" : "Mở menu"}
       >
-        {menuOpen ? <X size={22} /> : <Menu size={22} />}
+        {open ? <X size={22} /> : <Menu size={22} />}
       </button>
 
-      <nav className={`top-nav ${menuOpen ? "open" : ""}`}>
+      <nav className={open ? "top-nav open" : "top-nav"}>
         {MENU_ITEMS.map((item) => (
           <button
             key={item.path}
@@ -57,19 +48,23 @@ export default function Header({ activePage, onNavigate }) {
 
         <button
           type="button"
-          className="forecast-button mobile-forecast-button"
-          onClick={() => handleNavigate("forecast")}
+          className={
+            activePage === FORECAST_MENU_ITEM.path
+              ? "mobile-forecast-button nav-active"
+              : "mobile-forecast-button"
+          }
+          onClick={() => handleNavigate(FORECAST_MENU_ITEM.path)}
         >
-          Dự đoán ngày mai
+          {FORECAST_MENU_ITEM.label}
         </button>
       </nav>
 
       <button
         type="button"
         className="forecast-button desktop-forecast-button"
-        onClick={() => handleNavigate("forecast")}
+        onClick={() => handleNavigate(FORECAST_MENU_ITEM.path)}
       >
-        Dự đoán ngày mai
+        {FORECAST_MENU_ITEM.label}
       </button>
     </header>
   );

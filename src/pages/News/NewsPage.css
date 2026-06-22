@@ -1,9 +1,10 @@
 .news-page {
-  padding: 34px 52px;
+  /* padding: 34px 52px; */
+  padding: 32px 38px 44px;
 }
 .news-page h2 {
   margin: 0 0 18px;
-  font-family: Georgia, serif;
+  /* font-family: Georgia, serif; */
   font-size: 32px;
   font-weight: 500;
 }

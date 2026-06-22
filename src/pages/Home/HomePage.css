@@ -1,5 +1,6 @@
 .home-page {
-  padding: 30px 42px 44px 30px;
+  /* padding: 30px 42px 44px 30px; */
+  padding: 32px 38px 44px;
 }
 
 .home-page * {
@@ -99,7 +100,7 @@
 
 .company-card-head h2 {
   margin: 0;
-  font-family: Georgia, serif;
+  /* font-family: Georgia, serif; */
   font-size: 34px;
   line-height: 1;
   color: #111;
@@ -188,7 +189,7 @@
 
 .section-heading h2 {
   margin: 0;
-  font-family: Georgia, serif;
+  /* font-family: Georgia, serif; */
   font-size: 30px;
   font-weight: 500;
   color: #2f261f;
@@ -325,7 +326,7 @@
 
 .chart-title-row h2 {
   margin: 0;
-  font-family: Georgia, serif;
+  /* font-family: Georgia, serif; */
   font-size: 28px;
   font-weight: 500;
   line-height: 1.15;
@@ -558,7 +559,7 @@
 
 .prediction-card h2 {
   margin: 18px 0 8px;
-  font-family: Georgia, serif;
+  /* font-family: Georgia, serif; */
   font-size: 24px;
   font-weight: 500;
   color: #2f261f;

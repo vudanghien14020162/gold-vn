@@ -1,6 +1,8 @@
 .forecast-page {
   width: 100%;
-  padding: 34px 52px;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 32px 38px 44px;
 }
 
 .forecast-page * {
@@ -15,10 +17,9 @@
 
 .forecast-page-title h2 {
   margin: 0;
-  font-family: Georgia, serif;
   font-size: 32px;
-  font-weight: 500;
-  color: #2f261f;
+  font-weight: 700;
+  color: #172033;
   line-height: 1.25;
 }
 
@@ -97,11 +98,15 @@
 
 .forecast-summary-panel div {
   min-width: 0;
+  min-height: 82px;
   padding: 18px;
   border: 1px solid #ead6c4;
   border-radius: 18px;
   background: #fffdf9;
   box-shadow: 0 10px 24px rgba(90, 58, 36, 0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .forecast-summary-panel span {
@@ -151,8 +156,9 @@
 
 .forecast-grid-list {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  align-items: stretch;
 }
 
 .forecast-item-card {
@@ -164,6 +170,8 @@
   border-radius: 22px;
   background: linear-gradient(135deg, #fffdf9 0%, #ffffff 56%, #fff7df 100%);
   box-shadow: 0 14px 30px rgba(145, 96, 28, 0.08);
+  display: flex;
+  flex-direction: column;
 }
 
 .forecast-top-line {
@@ -204,9 +212,8 @@
 .forecast-card-header h3 {
   margin: 0;
   color: #172033;
-  font-family: Georgia, serif;
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.22;
   overflow-wrap: anywhere;
 }
@@ -303,12 +310,13 @@
 
 .forecast-value-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(190px, 1fr));
   gap: 12px;
 }
 
 .forecast-value-card {
   min-width: 0;
+  min-height: 92px;
   padding: 14px;
   border-radius: 16px;
   background: #ffffff;
@@ -325,13 +333,14 @@
 
 .forecast-value-card strong {
   display: block;
-  max-width: 100%;
-  white-space: nowrap;
-  font-size: clamp(18px, 1.6vw, 21px);
+  width: 100%;
+  max-width: none;
+  font-size: 19px;
   line-height: 1.15;
   font-weight: 900;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: visible;
+  text-overflow: unset;
 }
 
 .forecast-current-price {
@@ -412,7 +421,7 @@
 }
 
 .forecast-note {
-  margin-top: 15px;
+  margin-top: auto;
   padding-top: 13px;
   border-top: 1px solid #ead6c4;
   color: #71665f;
@@ -459,6 +468,8 @@
   cursor: not-allowed;
 }
 
+/* RESPONSIVE */
+
 @media (max-width: 1280px) {
   .forecast-page {
     padding: 32px 36px;
@@ -474,6 +485,28 @@
 
   .forecast-summary-panel div:first-child {
     grid-column: span 2;
+  }
+
+  .forecast-value-grid {
+    grid-template-columns: repeat(2, minmax(170px, 1fr));
+  }
+
+  .forecast-value-card strong {
+    font-size: 21px;
+  }
+}
+
+@media (max-width: 1080px) {
+  .forecast-grid-list {
+    grid-template-columns: 1fr;
+  }
+
+  .forecast-value-grid {
+    grid-template-columns: repeat(2, minmax(180px, 1fr));
+  }
+
+  .forecast-value-card strong {
+    font-size: 22px;
   }
 }
 
@@ -491,8 +524,7 @@
   }
 
   .forecast-filter-bar,
-  .forecast-summary-panel,
-  .forecast-grid-list {
+  .forecast-summary-panel {
     grid-template-columns: 1fr;
   }
 
@@ -508,7 +540,7 @@
 
 @media (max-width: 620px) {
   .forecast-page {
-    padding: 20px 16px;
+    padding: 20px 16px 92px;
   }
 
   .forecast-page-title h2 {
@@ -544,13 +576,14 @@
   }
 
   .forecast-value-card strong {
-    font-size: 20px;
+    font-size: 22px;
+    white-space: nowrap;
   }
 }
 
 @media (max-width: 420px) {
   .forecast-page {
-    padding: 16px 12px;
+    padding: 16px 12px 92px;
   }
 
   .forecast-page-title h2 {
@@ -587,6 +620,11 @@
 
   .forecast-value-card {
     padding: 13px;
+  }
+
+  .forecast-value-card strong {
+    font-size: 20px;
+    white-space: normal;
   }
 
   .forecast-pagination button {

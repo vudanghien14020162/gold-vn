@@ -1,5 +1,5 @@
 const API_BASE_URL = "https://be-gold-mongo-mysql.vercel.app";
-const FORECAST_API_URL = "http://127.0.0.1:8000";
+const FORECAST_API_URL = "https://gold-forecast-fastapi-ml-production.up.railway.app";
 async function request(path) {
   const response = await fetch(`${API_BASE_URL}${path}`);
 

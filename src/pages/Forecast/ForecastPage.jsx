@@ -3,7 +3,7 @@ import { forecastApi } from "../../api/forecastApi";
 import Loading from "../../components/Loading/Loading";
 import "./ForecastPage.css";
 
-const PAGE_SIZE = 9;
+const PAGE_SIZE = 10;
 
 const COMPANIES = [
   { id: 1, code: "SJC", name: "Vàng Bạc Đá Quý Sài Gòn" },

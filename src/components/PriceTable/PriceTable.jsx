@@ -26,8 +26,8 @@ export default function PriceTable({ prices = [], onSelectItem }) {
               </p>
             </div>
 
-            <span className={getChangeClass(item.buyChange)}>
-              {formatChange(item.buyChange)}
+            <span className={getChangeClass(item.sellChange)}>
+              {formatChange(item.sellChange)}
             </span>
           </div>
 

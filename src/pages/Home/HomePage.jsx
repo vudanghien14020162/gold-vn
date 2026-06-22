@@ -236,8 +236,14 @@ export default function HomePage({ onNavigate }) {
   }, [history]);
 
   const goToPricePage = (companyId = "all") => {
+    const id = String(companyId || "all");
+
     if (typeof onNavigate === "function") {
-      onNavigate("price", { companyId });
+      onNavigate("price", {
+        slug: "bang-gia",
+        companyId: id,
+        selectedCompanyId: id,
+      });
     }
   };
 
@@ -322,8 +328,8 @@ export default function HomePage({ onNavigate }) {
                   >
                     <div className="market-item-top">
                       <strong>{item.companyName}</strong>
-                      <span className={getChangeClass(item.buyChange)}>
-                        {formatChange(item.buyChange)}
+                      <span className={getChangeClass(item.sellChange)}>
+                        {formatChange(item.sellChange)}
                       </span>
                     </div>
 
