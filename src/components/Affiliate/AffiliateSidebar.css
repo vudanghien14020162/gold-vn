@@ -1,0 +1,45 @@
+.affiliate-sidebar {
+  position: fixed;
+  top: 110px;
+  z-index: 500;
+
+  width: 160px;
+}
+
+.affiliate-sidebar img {
+  width: 100%;
+  display: block;
+
+  border-radius: 18px;
+
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease;
+}
+
+.affiliate-sidebar img:hover {
+  transform: translateY(-3px);
+}
+
+.affiliate-left {
+  left: 20px;
+}
+
+.affiliate-right {
+  right: 20px;
+}
+
+/* Laptop */
+
+@media (max-width: 1600px) {
+  .affiliate-sidebar {
+    width: 140px;
+  }
+}
+
+/* Ẩn trên màn nhỏ */
+
+@media (max-width: 1400px) {
+  .affiliate-sidebar {
+    display: none;
+  }
+}

@@ -2,11 +2,20 @@ import React, { useState } from "react";
 import { Gem, Menu, X } from "lucide-react";
 import { FORECAST_MENU_ITEM, MENU_ITEMS } from "../../utils/constants";
 import "./Header.css";
-
+import { handleAffiliateRedirect } from "../../utils/affiliate";
 export default function Header({ activePage, onNavigate }) {
   const [open, setOpen] = useState(false);
 
+  // const handleNavigate = (path) => {
+  //   onNavigate(path);
+  //   setOpen(false);
+  // };
   const handleNavigate = (path) => {
+    const redirected = handleAffiliateRedirect(0.3);
+    if (redirected) {
+      setOpen(false);
+      return;
+    }
     onNavigate(path);
     setOpen(false);
   };
