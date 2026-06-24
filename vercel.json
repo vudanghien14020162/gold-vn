@@ -1,7 +1,47 @@
 {
+  "headers": [
+    {
+      "source": "/sitemap.xml",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/xml; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        }
+      ]
+    }
+  ],
   "rewrites": [
     {
-      "source": "/((?!sitemap.xml|robots.txt|manifest.json|favicon.ico|favicon.png|favicon.svg|images/.*|assets/.*).*)",
+      "source": "/bang-gia",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/the-gioi",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/du-doan",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/doc-mp3",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/tin-tuc",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/lien-he",
       "destination": "/index.html"
     }
   ]
