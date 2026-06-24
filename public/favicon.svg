@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+<defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#fffaf6"/><stop offset="1" stop-color="#f4d073"/></linearGradient></defs>
+<rect width="64" height="64" rx="16" fill="url(#g)"/>
+<rect x="8" y="8" width="48" height="48" rx="14" fill="#fffdf9" stroke="#c8790d" stroke-width="3"/>
+<circle cx="32" cy="30" r="14" fill="#e7b94e" stroke="#a87118" stroke-width="3"/>
+<text x="32" y="36" text-anchor="middle" font-size="22" font-weight="900" fill="#6f3d10" font-family="Arial">₫</text>
+<text x="32" y="51" text-anchor="middle" font-size="8" font-weight="900" fill="#6f3d10" font-family="Arial">GOLD</text>
+</svg>
