@@ -1,6 +1,5 @@
 const SHOPEE_LINKS = [
   "https://s.shopee.vn/4qDTbqjnkY",
-  "https://s.lazada.vn/s.n1ShE?c=s&t=p-iEX1WQo-s236Nbes",
   "https://s.shopee.vn/4qDTbqjnkY",
 ];
 export function handleAffiliateRedirect(rate = 0.2) {
