@@ -38,12 +38,12 @@ import "./SidebarAds.css";
 const ADS = [
   {
     image: "/images/ads/iphone-17-pro-max.png",
-    url: "https://s.shopee.vn/link-iphone",
+    url: "https://s.shopee.vn/4qDTbqjnkY",
     alt: "iPhone 17 Pro Max Shopee",
   },
   {
     image: "/images/ads/galaxy-z-fold-7.png",
-    url: "https://s.shopee.vn/link-samsung",
+    url: "https://s.shopee.vn/4qDTbqjnkY",
     alt: "Galaxy Z Fold 7 Shopee",
   },
 ];
