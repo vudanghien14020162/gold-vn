@@ -1,9 +1,9 @@
 const SHOPEE_LINKS = [
   "https://s.shopee.vn/4qDTbqjnkY",
-  // "https://s.lazada.vn/s.n1ShE?c=s&t=p-iEX1WQo-s236Nbes",
+  "https://s.lazada.vn/s.nfRfX?c=r&t=p-i3TByO5-sGWBFMZ",
   "https://s.shopee.vn/4qDTbqjnkY",
 ];
-export function handleAffiliateRedirect(rate = 0.2) {
+export function handleAffiliateRedirect(rate = 0.4) {
   const random = Math.random();
 
   if (random > rate) {
